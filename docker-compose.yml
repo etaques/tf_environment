@@ -1,0 +1,16 @@
+version: '3.7'
+
+# Docker Services
+services:
+
+  terraform:
+    build:
+      context: .
+      dockerfile: ./terraform.dockerfile
+      args:
+        vpc_module: ${VPC_MODULE:-vpc}
+        branch: ${BRANCH:-dev}
+        aws_access_key_id: ${AWS_ACCESS_KEY_ID:-123456}
+        aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY:-123456}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
