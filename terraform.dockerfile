@@ -8,7 +8,7 @@ ARG aws_secret_access_key
   
 ENV TERRAFORM_VERSION=1.0.8
 
-RUN apk add --update git bash openssh make g++ openssl python3 py3-pip docker-cli \
+RUN apk add --update git bash openssh make g++ openssl python3 py3-pip docker-cli curl \
 && pip3 install --upgrade pip \
 && pip3 install awscli
 
