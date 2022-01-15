@@ -1,8 +1,8 @@
 FROM golang:alpine
 MAINTAINER "HashiCorp Terraform Team <terraform@hashicorp.com>"
 
-ARG vpc_module=vpc
-ARG branch=dev
+# This is a HashiCorp Oficial image modified
+
 ARG aws_access_key_id
 ARG aws_secret_access_key
   
@@ -10,27 +10,30 @@ ENV TERRAFORM_VERSION=1.0.8
 
 RUN apk add --update git bash openssh make g++ openssl python3 py3-pip docker-cli \
 && pip3 install --upgrade pip \
-&& pip3 install awscli \
-&& mkdir /data
+&& pip3 install awscli
   
-RUN aws --version
-  
-COPY ./infra /data
-COPY ./secrets-lambda /data/secrets-lambda
 COPY ./terraform-entrypoint.sh /
-  
 RUN chmod a+x /terraform-entrypoint.sh
-  
-RUN cp -rpf /data/env/dev /data/env/$branch \
-&& cp -rpf /data/deploy/env/dev /data/deploy/env/$branch \
-&& mv /data/deploy/env/db.tfvars /data/deploy/env/$branch \
-&& mv /data/env/db.tfvars /data/env/$branch
 
-RUN sed -i -e "s/vpc_import/$vpc_module/g" /data/env/$branch/module.tf
-  
-RUN sed -i -e "s/ns1/$branch/g" /data/env/$branch/db.tfvars \
-&& sed -i -e "s/ns1/$branch/g" /data/deploy/env/$branch/db.tfvars
+#Aws-iam-authenticator
+RUN curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator \
+&& chmod +x ./aws-iam-authenticator \
+&& mkdir -p $HOME/bin \
+&& cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator \
+&& export PATH=$PATH:$HOME/bin
 
+#Kubectl
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl \
+&& chmod +x ./kubectl \
+&& mv ./kubectl /usr/local/bin/kubectl \ 
+&& kubectl version --client
+
+#Helm
+RUN git clone https://github.com/helm/helm.git \
+&& cd helm \
+&& make
+  
+ENV TF_LOG=TRACE
 ENV TF_DEV=true
 ENV TF_RELEASE=true
 ENV AWS_ACCESS_KEY_ID=$aws_access_key_id

@@ -8,9 +8,17 @@ services:
       context: .
       dockerfile: ./terraform.dockerfile
       args:
-        vpc_module: ${VPC_MODULE:-vpc}
-        branch: ${BRANCH:-dev}
         aws_access_key_id: ${AWS_ACCESS_KEY_ID:-123456}
         aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY:-123456}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /storage-docker/ferramentas/terraform_data:/data
+
+  portainer:
+    image: portainer/portainer-ce
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /storage-docker/ferramentas/portainer_data:/data
