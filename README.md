@@ -47,17 +47,18 @@ cd tf_environment</pre>
 
 <b>5.3- Standing up just terraform container (terraform_builder only) without aws credentials</b>
 
-Set <pre>ENV TERRAFORM_VERSION=1.0.8</pre> on terraform.dockerfile
+Set on terraform.dockerfile version you want:
+<pre>ENV TERRAFORM_VERSION=1.0.8</pre>
 
 build:
-<pre>docker build -f terraform.dockerfile -t terraform_builder .</pre>
+<pre>docker build -f terraform.dockerfile -t terraform_builder_108 .</pre>
 
 run:
 <pre>docker run -d --name AWS_FUN_PLACE_3 \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose \
 -v /storage-docker/ferramentas/terraform_data:/data \
-terraform_builder</pre>
+terraform_builder108</pre>
 
 <b>6- Access portainer UI and work on your containers at http://localhost:9000 easier</b>
 
