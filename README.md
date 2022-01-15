@@ -21,11 +21,12 @@ mkdir /storage-docker/ferramentas
 
 git clone https://github.com/etaques/tf_environment.git
 
-5.1- Stand up environment without aws credentials
+5- Stand up environment according your need
+5.1- Standing up environment without aws credentials
 
 docker-compose --project-name AWS_WORKPLACE up -d --build
 
-5.2- Stand up environment injecting aws credentials
+5.2- Standing up environment injecting aws credentials
 
 aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose -f --project-name AWS_WORKPLACE up -d --build
 
