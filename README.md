@@ -3,7 +3,7 @@
 Basic environment to work with Hashicorp Terraform running on docker
 
 
-<b>1- Install docker on your enviroment, making your system as docker host</b>
+<b>1- Install docker on your enviroment, making your operational system as docker host</b>
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
