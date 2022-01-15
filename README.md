@@ -37,27 +37,31 @@ cd tf_environment</pre>
 
 # Stand up the environment according your need
 
-Set on terraform.dockerfile version you want:
-<pre>ENV TERRAFORM_VERSION=1.0.8</pre>
+Set on terraform.dockerfile variables if you want:
+<pre>
+ENV TERRAFORM_VERSION=1.0.8
+ENV TF_LOG=TRACE
+ENV TF_DEV=true
+ENV TF_RELEASE=true
+ENV AWS_ACCESS_KEY_ID=
+ENV AWS_SECRET_ACCESS_KEY=
+</pre>
 
 <b>5.1- Standing up (portainer-ui + terraform_builder) without aws credentials</b>
 
-<pre>docker-compose --project-name AWS_FUN_PLACE_1 up -d --build</pre>
+<pre>docker-compose --project-name AWS_FUN_PLACE_1_V108 up -d --build</pre>
 
 <b>5.2- Standing up (portainer-ui + terraform_builder) injecting aws credentials</b>
 
-<pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_FUN_PLACE_2 up -d --build</pre>
+<pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_FUN_PLACE_2_V108 up -d --build</pre>
 
 <b>5.3- Standing up just terraform container (terraform_builder only) without aws credentials</b>
-
-Set on terraform.dockerfile version you want:
-<pre>ENV TERRAFORM_VERSION=1.0.8</pre>
 
 build:
 <pre>docker build -f terraform.dockerfile -t terraform_builder_108 .</pre>
 
 run:
-<pre>docker run -d --name AWS_FUN_PLACE_3 \
+<pre>docker run -d --name AWS_FUN_PLACE_3_V108 \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose \
 -v /storage-docker/ferramentas/terraform_data:/data \
