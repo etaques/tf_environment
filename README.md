@@ -1,7 +1,7 @@
 # terraform-aws-fun-land
 
 Basic schema to have fun with multiple and isolated Hashicorp Terraform versions in one machine. 
-This can help you to have several build environments each one with own aws credentials without re-work and not dirtying your operating system with packages.
+This can help you to have several build environments each one with own aws credentials to perform tasks without re-work and not dirtying your operating system with different packages.
 
 This environment uses modified version of Hashicorp Terraform dockerfile following tools installed:
 
