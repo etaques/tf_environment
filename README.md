@@ -1,6 +1,6 @@
 # terraform-aws-funland
 
-Basic environment to fun with Hashicorp Terraform running on docker
+Basic environment to have fun with Hashicorp Terraform running on docker
 
 This environment uses modified version of Hashicorp Terraform dockerfile following tools installed:
 
