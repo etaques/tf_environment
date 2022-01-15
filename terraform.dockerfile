@@ -11,9 +11,6 @@ ENV TERRAFORM_VERSION=1.0.8
 RUN apk add --update git bash openssh make g++ openssl python3 py3-pip docker-cli \
 && pip3 install --upgrade pip \
 && pip3 install awscli
-  
-COPY ./terraform-entrypoint.sh /
-RUN chmod a+x /terraform-entrypoint.sh
 
 #Aws-iam-authenticator
 RUN curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator \
