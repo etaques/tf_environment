@@ -32,6 +32,11 @@ aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --projec
 
 5.3- Standing up just terraform container (terraform_builder) without aws credentials
 
+docker build -t terraform_builder -f terraform.dockerfile \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose \
+-v /storage-docker/ferramentas/terraform_data:/data
+
 5.4- Standing up just terraform container (terraform_builder) injecting aws credentials 
 
 6- Access portainer UI and to work on your containers at http://localhost:9000 easier
