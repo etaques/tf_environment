@@ -13,33 +13,33 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 
 <b>3- Create basic directory to host docker-compose persistent folder</b>
 
-mkdir /storage-docker/
+<pre>mkdir /storage-docker/
 
-mkdir /storage-docker/ferramentas
+mkdir /storage-docker/ferramentas</pre>
 
 <b>4- Clone this repository</b>
 
-git clone https://github.com/etaques/tf_environment.git
-cd tf_environment
+<pre>git clone https://github.com/etaques/tf_environment.git
+cd tf_environment</pre>
 
 <b>5- Stand up environment according your need</b></br>
 <b>5.1- Standing up environment (portainer-ui + terraform_builder) without aws credentials</b>
 
-docker-compose --project-name AWS_WORKPLACE up -d --build
+<pre>docker-compose --project-name AWS_WORKPLACE up -d --build</pre>
 
 <b>5.2- Standing up environment (portainer-ui + terraform_builder) injecting aws credentials</b>
 
-aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_WORKPLACE up -d --build
+<pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_WORKPLACE up -d --build</pre>
 
 <b>5.3- Standing up just terraform container (terraform_builder only) without aws credentials</b>
 
-docker build -f terraform.dockerfile -t terraform_builder .
+<pre>docker build -f terraform.dockerfile -t terraform_builder .</pre>
 
-docker run -d --name terraform_builder_1 \
+<pre>docker run -d --name terraform_builder_1 \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose \
 -v /storage-docker/ferramentas/terraform_data:/data \
-terraform_builder
+terraform_builder</pre>
 
 <b>6- Access portainer UI and work on your containers at http://localhost:9000 easier</b>
 
