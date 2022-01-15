@@ -1,6 +1,6 @@
-# terraform-aws
+# terraform-aws-funland
 
-Basic environment to work with Hashicorp Terraform running on docker
+Basic environment to fun with Hashicorp Terraform running on docker
 
 This environment uses modified version of Hashicorp Terraform dockerfile following tools installed:
 
@@ -62,6 +62,7 @@ The folder /data inside terraform container is the persistent place to put your 
 Now you can work with terraform in various versions just changing terraform.dockerfile environment variables, 
 also portainer UI can give your easy way to check whats running or access shell from a beauty interface
 
+Have fun!
 
 <b>Basic Terraform commands:</b>
 
