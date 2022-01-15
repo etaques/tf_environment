@@ -41,7 +41,7 @@ docker run -d --name terraform_builder_1 \
 -v /storage-docker/ferramentas/terraform_data:/data \
 terraform_builder
 
-<b>6- Access portainer UI and to work on your containers at http://localhost:9000 easier</b>
+<b>6- Access portainer UI and work on your containers at http://localhost:9000 easier</b>
 
 The folder /data inside terraform container is the persistent place to put your terraform project
 
