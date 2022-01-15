@@ -28,7 +28,7 @@ docker-compose --project-name AWS_WORKPLACE up -d --build
 
 5.2- Standing up environment injecting aws credentials
 
-aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose -f --project-name AWS_WORKPLACE up -d --build
+aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_WORKPLACE up -d --build
 
 6- Access portainer UI and to work on your containers at http://localhost:9000 easier
 
