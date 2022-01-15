@@ -11,7 +11,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
 
-<b>3- Create basic directory to host docker-compose persistent folder</b>
+<b>3- Create basic directory to persist files</b>
 
 <pre>mkdir /storage-docker/
 
