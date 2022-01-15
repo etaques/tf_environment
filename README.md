@@ -47,6 +47,8 @@ cd tf_environment</pre>
 
 <b>5.3- Standing up just terraform container (terraform_builder only) without aws credentials</b>
 
+Set <pre>ENV TERRAFORM_VERSION=1.0.8</pre> on terraform.dockerfile
+
 build:
 <pre>docker build -f terraform.dockerfile -t terraform_builder .</pre>
 
