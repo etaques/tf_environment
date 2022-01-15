@@ -10,6 +10,10 @@ This environment uses modified version of Hashicorp Terraform dockerfile followi
 - [aws iam authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [helm](https://helm.sh/docs/intro/install/)
+- [git](#)
+- [curl](#)
+- [make](#)
+- [wget](#)
 
 Also docker is available inside container
 
