@@ -70,7 +70,9 @@ terraform_builder108</pre>
 
 <b>6- Access portainer UI and work on your containers at http://localhost:9000 easier</b>
 
-The folder /data inside terraform container is the persistent place to put your terraform project
+The folder <b>/data</b> inside terraform container is the persistent place to put your terraform project. If you did step 3, this is mapped on your docker host at directory:
+
+<pre>/storage-docker/ferramentas/terraform_data</pre>
 
 Now you can work with terraform in various versions just changing terraform.dockerfile environment variables, 
 also portainer UI can give your easy way to check whats running or access shell from a beauty interface
