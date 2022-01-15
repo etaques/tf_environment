@@ -35,16 +35,16 @@ mkdir /storage-docker/ferramentas</pre>
 <pre>git clone https://github.com/etaques/tf_environment.git
 cd tf_environment</pre>
 
-# Stand up environment according your need
+# Stand up the environment according your need
 
 Set on terraform.dockerfile version you want:
 <pre>ENV TERRAFORM_VERSION=1.0.8</pre>
 
-<b>5.1- Standing up environment (portainer-ui + terraform_builder) without aws credentials</b>
+<b>5.1- Standing up (portainer-ui + terraform_builder) without aws credentials</b>
 
 <pre>docker-compose --project-name AWS_FUN_PLACE_1 up -d --build</pre>
 
-<b>5.2- Standing up environment (portainer-ui + terraform_builder) injecting aws credentials</b>
+<b>5.2- Standing up (portainer-ui + terraform_builder) injecting aws credentials</b>
 
 <pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_FUN_PLACE_2 up -d --build</pre>
 
