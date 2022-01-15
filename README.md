@@ -35,7 +35,8 @@ mkdir /storage-docker/ferramentas</pre>
 <pre>git clone https://github.com/etaques/tf_environment.git
 cd tf_environment</pre>
 
-<b>5- Stand up environment according your need</b></br>
+# Stand up environment according your need
+
 <b>5.1- Standing up environment (portainer-ui + terraform_builder) without aws credentials</b>
 
 <pre>docker-compose --project-name AWS_WORKPLACE up -d --build</pre>
