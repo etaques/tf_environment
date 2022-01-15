@@ -39,17 +39,17 @@ cd tf_environment</pre>
 
 <b>5.1- Standing up environment (portainer-ui + terraform_builder) without aws credentials</b>
 
-<pre>docker-compose --project-name AWS_WORKPLACE up -d --build</pre>
+<pre>docker-compose --project-name AWS_FUN_PLACE_1 up -d --build</pre>
 
 <b>5.2- Standing up environment (portainer-ui + terraform_builder) injecting aws credentials</b>
 
-<pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_WORKPLACE up -d --build</pre>
+<pre>aws_access_key_id=XXXXXXX aws_secret_access_key=XXXXXXXX docker-compose --project-name AWS_FUN_PLACE_2 up -d --build</pre>
 
 <b>5.3- Standing up just terraform container (terraform_builder only) without aws credentials</b>
 
 <pre>docker build -f terraform.dockerfile -t terraform_builder .</pre>
 
-<pre>docker run -d --name terraform_builder_1 \
+<pre>docker run -d --name AWS_FUN_PLACE_3 \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /usr/local/bin/docker-compose:/usr/local/bin/docker-compose \
 -v /storage-docker/ferramentas/terraform_data:/data \
