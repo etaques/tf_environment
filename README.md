@@ -14,6 +14,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 3- Create basic directory to host docker-compose persistent folder
 
 mkdir /storage-docker/
+
 mkdir /storage-docker/ferramentas
 
 4- Clone this repository
