@@ -42,4 +42,4 @@ RUN git clone https://github.com/hashicorp/terraform.git ./ && \
     /bin/bash scripts/build.sh
 
 WORKDIR $GOPATH
-ENTRYPOINT ["tail", "/dev/null"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
