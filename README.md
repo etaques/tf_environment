@@ -14,10 +14,14 @@ This environment uses modified version of Hashicorp Terraform dockerfile followi
 - [curl](#)
 - [make](#)
 - [wget](#)
+- [openssl](#)
+- [g++](#)
+- [python3](#)
+- [py3-pip](#)
 
-Also docker is available inside container
+Also docker is available inside container by docker-cli installation and docker socket shared from docker host to container
 
-- [docker](https://docs.docker.com/engine/install/) 
+- [docker-cli](https://docs.docker.com/engine/install/) 
 
 # install-steps
 
