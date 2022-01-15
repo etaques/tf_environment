@@ -1,4 +1,4 @@
-# terraform-aws-funland
+# terraform-aws-fun-land
 
 Basic environment to have fun with Hashicorp Terraform running on docker
 
