@@ -12,6 +12,7 @@ services:
         aws_secret_access_key: ${AWS_SECRET_ACCESS_KEY:-123456}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
       - /storage-docker/ferramentas/terraform_data:/data
 
   portainer:
