@@ -2,6 +2,17 @@
 
 Basic environment to work with Hashicorp Terraform running on docker
 
+This environment uses modified version of Hashicorp Terraform dockerfile following tools installed:
+
+- [aws cli v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [terraform 1.0.8](https://releases.hashicorp.com/terraform/)
+- [aws iam authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [helm](https://helm.sh/docs/intro/install/)
+
+Also docker is available inside container
+
+- [docker](https://docs.docker.com/engine/install/) 
 
 <b>1- Install docker on your enviroment, making your operational system as docker host</b>
 
