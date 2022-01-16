@@ -69,7 +69,7 @@ ENV AWS_SECRET_ACCESS_KEY=
 build:
 <pre>docker build -f terraform.dockerfile -t terraform_builder_108 .</pre>
 
-Pay attention on this line to complete with correct path to not share with any existent container
+Pay attention on this line to complete with correct path to not share with any existent container, in this case mine is <b>dev</b>
 <pre>-v /storage-docker/ferramentas/terraform_data_<b>dev</b>:/data \</pre>
 
 run:
