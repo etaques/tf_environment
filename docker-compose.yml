@@ -13,7 +13,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
-      - /storage-docker/ferramentas/terraform_data:/data
+      - /storage-docker/ferramentas/terraform_data_${environment}:/data
 
   portainer:
     image: portainer/portainer-ce
