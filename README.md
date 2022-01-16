@@ -3,7 +3,7 @@
 Basic scheme to have fun with multiple and isolated Hashicorp Terraform versions in one machine. 
 This can help you to have several build environments each one with own aws credentials to perform tasks without re-work and not dirtying your operating system with different packages.
 
-This scheme uses modified version of official Hashicorp Terraform dockerfile following tools installed:
+This scheme uses modified version of official Hashicorp Terraform dockerfile plus following tools installed:
 
 - [aws cli v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - [terraform 1.0.8](https://releases.hashicorp.com/terraform/) (set any version you want inside dockerfile)
